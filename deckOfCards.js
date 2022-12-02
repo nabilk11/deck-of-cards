@@ -1,5 +1,4 @@
 // Card Class
-
 class Card {
   constructor(suite, value) {
     this.suite = suite;
@@ -16,5 +15,30 @@ const getShuffledArr = (arr) => {
   }
   return newArr;
 };
+
+
+// Create Deck Function
+const createDeck = () => {
+    const suites = ['Spades', 'Hearts', 'Clubs', 'Diamonds']
+    const values = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K']
+
+    const deck = []
+
+    for (v of values) {
+        for (s of suites) {
+            const c = new Card(s,v)
+
+            deck.push(c)
+        }
+    }
+    return getShuffledArr(deck)
+
+}
+
+// Provides 52 Instances of Card - Random Suites and Values
+
+createDeck()
+
+console.log(createDeck())
 
 
