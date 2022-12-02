@@ -1,13 +1,20 @@
-
-
-
 // Card Class
 
 class Card {
-    constructor(suite, value) {
-        this.suite = suite
-        this.value = value
-    }
+  constructor(suite, value) {
+    this.suite = suite;
+    this.value = value;
+  }
 }
+
+// Shuffling or Randomizing an Array
+const getShuffledArr = (arr) => {
+  const newArr = arr.slice();
+  for (let i = newArr.length - 1; i > 0; i--) {
+    const rand = Math.floor(Math.random() * (i + 1));
+    [newArr[i], newArr[rand]] = [newArr[rand], newArr[i]];
+  }
+  return newArr;
+};
 
 
